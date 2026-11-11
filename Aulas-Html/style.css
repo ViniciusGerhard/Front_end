@@ -1,0 +1,113 @@
+    h1 { 
+        color: rgb(255, 0, 0);
+        font-family: Verdana;
+        font-size: 100px;
+        text-align: center;
+        }
+
+    img {
+        display: block;
+        margin:auto;
+        width: 250px;
+        height: 250px;
+        filter: grayscale(100%);
+        }
+    
+    img:hover {
+        filter:grayscale(0%)
+    }
+    
+    #img2:hover {
+         transition: opacity 0.3s ease;
+         opacity: 0;
+        }
+        
+    h2 {
+    font-family:  verdana;
+    color: rgb(0, 0, 0);
+    font-size: 50px;
+    text-align: center; 
+    position: relative; 
+    left: -50vw; 
+    clip-path: inset(0 100% 0 0);
+    opacity: 0;
+    
+    animation: deslizarETexto 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
+
+    @keyframes deslizarETexto {
+    to {
+        
+        left: 0;
+        clip-path: inset(0 0 0 0);
+        opacity: 1;
+    }
+}
+
+.titulo-animado {
+    font: 2.5rem sans-serif;
+    color: #333;
+    text-align: center;
+    position: relative;
+    left: -50vw; 
+    clip-path: inset(0 100% 0 0);
+    opacity: 0;
+    animation: deslizarETexto 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes deslizarETexto {
+    to { left: 0; clip-path: inset(0 0 0 0); opacity: 1; }
+}
+
+/* --- Seu H3 com Efeito de Digitação --- */
+h3 {
+    font: 1.8rem monospace;
+    color: #a80000;
+    
+    /* Centraliza o bloco na tela e mantém ele firme no meio */
+    display: block;
+    margin: 15px auto 0 auto; 
+    text-align: left; /* O texto interno alinha à esquerda da caixa centralizada */
+    
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid #000000;
+    
+    /* Estado inicial: largura zero e invisível */
+    width: 0;
+    opacity: 0;
+    
+    /* Animações sincronizadas */
+    animation: 
+        aparecer 0s 1.5s forwards,
+        digitar 3s steps(36) 1.5s forwards, /* 36 passos para as 36 letras */
+        piscar 0.75s step-end infinite;
+}
+
+@keyframes aparecer {
+    to { opacity: 1; }
+}
+
+@keyframes digitar {
+    /* Abre exatamente a largura das 36 letras da sua frase, mantendo ela centralizada */
+    to { width: 36ch; } 
+}
+
+@keyframes piscar {
+    from, to { border-color: transparent }
+    50% { border-color: #000000; }
+}
+
+body {
+    background-color: rgba(0, 68, 59, 0.479);
+}
+
+nav {
+    text-align: center;
+    border-bottom: 3px solid red;
+}
+
+
+  
+
+
